@@ -39,6 +39,13 @@ jobs:
   unittest:
     name: Unittest
     runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: something-very-secret-that-you-cannot-know
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: chuyende
 
     steps:
       - name: Check out code
