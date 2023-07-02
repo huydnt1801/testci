@@ -36,7 +36,7 @@ jobs:
         run: |
           cd server
           go vet ./...
-  lint:
+  unittest:
     name: Unittest
     runs-on: ubuntu-latest
 
