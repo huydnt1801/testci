@@ -1,0 +1,7 @@
+h1:BPlwNpUUwJRcdzNJ4jHO9dRPhfNyTDKM0x02LVKViEk=
+20230501145008_user,otp_table.sql h1:ZVhtvlEYFqQ0ojUZe2MJw1xoN3GuyT8FhsPlypL3ULo=
+20230611162152_add_trips_table.sql h1:i5XhOXxvsBv/GAuRmG+d7DoRcHMRJCxduur5xqhPSsE=
+20230621164720_add_session_table.sql h1:/gyJ5TXSricpAeUJ39VLOwYKcblKND06cu7r0k1U2tM=
+20230627011145_refactor_trip_and_user.sql h1:r3PQ8rpzRTvkNTxmGqCTEoHKSWnyJrqY4ogZnKIJ1lc=
+20230629145205_add_type_trip.sql h1:J3HsmlqC8sAZIHamMoKFKFeSiiDiubWBv/G6dLPneA8=
+20230630152032_add_driver_license.sql h1:kdzFS9ZgItRm9lqcejdtFIVvcOHN8SsqHoVjK/bFZf4=

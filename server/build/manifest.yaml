@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/huydnt1801/huydnt1801/cd-backend:be-v1.1
+          env:
+          - name: SECRET_KEY
+            value: "something-very-secret-that-you-cannot-know"
+          - name: MYSQL_HOST
+            value: "chuyende.mysql.database.azure.com"
+          - name: MYSQL_PORT
+            value: "3306"
+          - name: MYSQL_USERNAME
+            value: "chuyende"
+          - name: MYSQL_PASSWORD
+            value: "Tienhuy180101"
+          - name: MYSQL_DATABASE
+            value: "chuyende"
+          ports:
+            - name: http
+              containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /healthz/ready
+              port: 5000
+          livenessProbe:
+            httpGet:
+              path: /healthz/liveness
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+spec:
+  selector:
+    app: app
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 5000
